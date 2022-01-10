@@ -31,4 +31,40 @@ function closeModal () {
   modalbg.style.display = "none";
 }
   
+// On récupère tout les elements du formulaire
+const firstName = document.querySelector("#first");
+const lastName = document.querySelector("#last");
+
+const birthdate = document.querySelector("#birthdate");
+const quantity = document.querySelector("#quantity");
+const locationn = document.querySelector(".radio");
+const userConditions = document.querySelector("#checkbox1");
+
+let myForm = document.getElementById("modalForm") 
+
+myForm.addEventListener('submit', function(e) {
+  let email = document.querySelector(".formData .email");
+  let validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    if (email.value == "") {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = "Le champs email est requis."
+      myError.style.color = "red";
+      e.preventDefault();
+
+    }else if (validRegex.test(email.value) == false) {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = "Adresse email non valide."
+      myError.style.color = "red";
+      e.preventDefault();
+    }
+})
+
+
+
+
+
+
+
+
 
