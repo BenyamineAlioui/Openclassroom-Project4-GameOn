@@ -31,19 +31,20 @@ function closeModal () {
   modalbg.style.display = "none";
 }
   
-// On récupère tout les elements du formulaire
-const firstName = document.querySelector("#first");
-const lastName = document.querySelector("#last");
+//On crée une variable en recuperant notre formulaire
+let myFormValidation = document.getElementById("modalForm") 
 
-const birthdate = document.querySelector("#birthdate");
-const quantity = document.querySelector("#quantity");
-const locationn = document.querySelector(".radio");
-const userConditions = document.querySelector("#checkbox1");
+//On crée une fonction 
+myFormValidation.addEventListener('submit', function(e) {
 
-let myForm = document.getElementById("modalForm") 
-
-myForm.addEventListener('submit', function(e) {
+  // On récupère tout les elements du formulaire
+  let firstName = document.querySelector("#first");
+  let lastName = document.querySelector("#last");
   let email = document.querySelector(".formData .email");
+  let birthdate = document.querySelector("#birthdate");
+  let quantity = document.querySelector("#quantity");
+  let locationn = document.querySelector(".radio");
+  let userConditions = document.querySelector("#checkbox1");
   let validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (email.value == "") {
