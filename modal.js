@@ -47,15 +47,58 @@ myFormValidation.addEventListener('submit', function(e) {
   let userConditions = document.querySelector("#checkbox1");
   let validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-    if (email.value == "") {
+    if (firstName.value == "") {
       let myError = document.querySelector(".error")
-      myError.innerHTML = "Le champs email est requis."
+      myError.innerHTML = "Le champ prénom est requis"
       myError.style.color = "red";
       e.preventDefault();
-
+    }else if (d) {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = ""
+      myError.style.color = "red";
+      e.preventDefault();
+    }
+    if (lastName.value == "") {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = "Le champ nom est requis"
+      myError.style.color = "red";
+      e.preventDefault();
+    }else if (d) {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = ""
+      myError.style.color = "red";
+      e.preventDefault();
+    }
+    if (email.value == "") {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = "Le champ email est requis."
+      myError.style.color = "red";
+      e.preventDefault();
     }else if (validRegex.test(email.value) == false) {
       let myError = document.querySelector(".error")
       myError.innerHTML = "Adresse email non valide."
+      myError.style.color = "red";
+      e.preventDefault();
+    }
+    if (birthdate.value == "") {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = "Le champ date de naissance est requis"
+      myError.style.color = "red";
+      e.preventDefault();
+    }else if (df) {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = ""
+      myError.style.color = "red";
+      e.preventDefault();
+    }
+    if (quantity.value == "") {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = "Ce champs est requis"
+      myError.style.color = "red";
+      e.preventDefault();
+    }else if (f) {
+      let myError = document.querySelector(".error")
+      myError.innerHTML = ""
       myError.style.color = "red";
       e.preventDefault();
     }
