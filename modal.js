@@ -53,46 +53,52 @@ myFormValidation.addEventListener('submit', function(e) {
       let myError = document.querySelector(".error");
       let myBorder = document.querySelector(".text-control");
       myError.innerHTML = "Le champ prénom est requis";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
     }else if ( 0 < firstName.value.length <= 2 ) {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
+    } else {
+      myBorder.style.borderColor = "green";
     }
+
     if (lastName.value == "") {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Le champ nom est requis";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myError.style.fontSize = "10px";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
     }else if ( 0 < firstName.value.length <= 2 ) {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
+    } else {
+      myBorder.style.borderColor = "green";
     }
 
     if (email.value === "") {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Le champ email est requis.";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
     }else if (validEmailRegex.test(email.value) === false) {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Adresse email non valide.";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
     } 
@@ -100,24 +106,26 @@ myFormValidation.addEventListener('submit', function(e) {
     if (birthdate.value === "") {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Le champ date de naissance est requis";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
     }else if (birthdateRegEx.test(birthdate.value) === false) {
       let myError = document.querySelector(".error");
       myError.innerHTML = ""
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
-    } 
+    } else {
+      
+    }
 
     if (quantity.value == "") {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Ce champs est requis";
-      myError.style.color = red;
-      myBorder.style.borderColor = red;
+      myError.style.color = "red";
+      myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
     }
@@ -125,17 +133,19 @@ myFormValidation.addEventListener('submit', function(e) {
     if (location.value == false) {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Ce champs est requis";
+      myError.style.color = "red";
       e.preventDefault();
       return false
     } 
-    
+
     if (userConditions.value == false) {
-      let myError = document.querySelector(".error")
-      myError.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions."
+      let myError = document.querySelector(".error");
+      myError.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
+      myError.style.color = "red";
       e.preventDefault();
       return false
     } else {
-      return true
+      
     }
 })
 
