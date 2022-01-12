@@ -45,6 +45,7 @@ myFormValidation.addEventListener('submit', function(e) {
   let quantity = document.querySelector("#quantity");
   let locationn = document.querySelector(".radio");
   let userConditions = document.querySelector("#checkbox1");
+  // Expression reguliere
   let validEmailRegex = /(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b/;
   let birthdateRegEx = /(Date of birth:|Birthday:)\s+(?:0[1-9]|1[012])[-/.](?:0[1-9]|[12][0-9]|3[01])[-/.](?:19\d{2}|20[01][0-9]|2020)\b/;
 
@@ -94,9 +95,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = red;
       e.preventDefault();
       return false
-    } else {
-      return true
-    }
+    } 
 
     if (birthdate.value === "") {
       let myError = document.querySelector(".error");
@@ -112,9 +111,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = red;
       e.preventDefault();
       return false
-    } else {
-      return true
-    }
+    } 
 
     if (quantity.value == "") {
       let myError = document.querySelector(".error");
@@ -123,8 +120,6 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = red;
       e.preventDefault();
       return false
-    }else {
-      return true
     }
     
     if (location.value == false) {
@@ -132,10 +127,8 @@ myFormValidation.addEventListener('submit', function(e) {
       myError.innerHTML = "Ce champs est requis";
       e.preventDefault();
       return false
-    } else  {
-      return false;
-    }
-
+    } 
+    
     if (userConditions.value == false) {
       let myError = document.querySelector(".error")
       myError.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions."
