@@ -45,20 +45,19 @@ myFormValidation.addEventListener('submit', function(e) {
   let quantity = document.querySelector("#quantity");
   let locationn = document.querySelector(".radio");
   let userConditions = document.querySelector("#checkbox1");
+  let myError = document.querySelector(".error");
+  let myBorder = document.querySelector(".text-control");
   // Expression reguliere
   let validEmailRegex = /(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b/;
   let birthdateRegEx = /(Date of birth:|Birthday:)\s+(?:0[1-9]|1[012])[-/.](?:0[1-9]|[12][0-9]|3[01])[-/.](?:19\d{2}|20[01][0-9]|2020)\b/;
 
     if (firstName.value == "") {
-      let myError = document.querySelector(".error");
-      let myBorder = document.querySelector(".text-control");
       myError.innerHTML = "Le champ prénom est requis";
       myError.style.color = "red";
       myBorder.style.borderColor = "red";
       e.preventDefault();
       return false
     }else if ( 0 < firstName.value.length <= 2 ) {
-      let myError = document.querySelector(".error");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
       myError.style.color = "red";
       myBorder.style.borderColor = "red";
@@ -69,7 +68,6 @@ myFormValidation.addEventListener('submit', function(e) {
     }
 
     if (lastName.value == "") {
-      let myError = document.querySelector(".error");
       myError.innerHTML = "Le champ nom est requis";
       myError.style.color = "red";
       myError.style.fontSize = "10px";
@@ -88,7 +86,6 @@ myFormValidation.addEventListener('submit', function(e) {
     }
 
     if (email.value === "") {
-      let myError = document.querySelector(".error");
       myError.innerHTML = "Le champ email est requis.";
       myError.style.color = "red";
       myBorder.style.borderColor = "red";
@@ -104,7 +101,6 @@ myFormValidation.addEventListener('submit', function(e) {
     } 
 
     if (birthdate.value === "") {
-      let myError = document.querySelector(".error");
       myError.innerHTML = "Le champ date de naissance est requis";
       myError.style.color = "red";
       myBorder.style.borderColor = "red";
@@ -122,7 +118,6 @@ myFormValidation.addEventListener('submit', function(e) {
     }
 
     if (quantity.value == "") {
-      let myError = document.querySelector(".error");
       myError.innerHTML = "Ce champs est requis";
       myError.style.color = "red";
       myBorder.style.borderColor = "red";
@@ -139,7 +134,6 @@ myFormValidation.addEventListener('submit', function(e) {
     } 
 
     if (userConditions.value == false) {
-      let myError = document.querySelector(".error");
       myError.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
       myError.style.color = "red";
       e.preventDefault();
