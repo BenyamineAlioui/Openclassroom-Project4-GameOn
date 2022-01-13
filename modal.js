@@ -54,33 +54,32 @@ myFormValidation.addEventListener('submit', function(e) {
     if (firstName.value == "") {
       myError.innerHTML = "Le champ prénom est requis";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     }else if ( 0 < firstName.value.length <= 2 ) {
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     } else {
       myBorder.style.borderColor = "green";
     }
 
     if (lastName.value == "") {
-      myError.innerHTML = "Le champ nom est requis";
+      myError.innerHTML = "Le champ nom est requis.";
       myError.style.color = "red";
-      myError.style.fontSize = "10px";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
-    }else if ( 0 < firstName.value.length <= 2 ) {
+    }else if ( 0 < lastName.value.length <= 2 ) {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     } else {
       myBorder.style.borderColor = "green";
     }
@@ -88,31 +87,31 @@ myFormValidation.addEventListener('submit', function(e) {
     if (email.value === "") {
       myError.innerHTML = "Le champ email est requis.";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     }else if (validEmailRegex.test(email.value) === false) {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Adresse email non valide.";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     } 
 
     if (birthdate.value === "") {
       myError.innerHTML = "Le champ date de naissance est requis";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     }else if (birthdateRegEx.test(birthdate.value) === false) {
       let myError = document.querySelector(".error");
       myError.innerHTML = ""
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     } else {
       
     }
@@ -120,24 +119,24 @@ myFormValidation.addEventListener('submit', function(e) {
     if (quantity.value == "") {
       myError.innerHTML = "Ce champs est requis";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       e.preventDefault();
-      return false
     }
     
     if (location.value == false) {
       let myError = document.querySelector(".error");
       myError.innerHTML = "Ce champs est requis";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       e.preventDefault();
-      return false
     } 
 
     if (userConditions.value == false) {
       myError.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
       myError.style.color = "red";
+      myError.style.fontSize = "13px";
       e.preventDefault();
-      return false
     } else {
       
     }
