@@ -85,7 +85,7 @@ myFormValidation.addEventListener('submit', function(e) {
       e.preventDefault();
     }
     
-    if (validEmailRegex.test(email.value) === false) {
+    if (validEmailRegex.test(email) === false) {
       myError = document.querySelector(".errorEmail");
       myBorder = document.querySelector(".text-control3");
       myError.innerHTML = "L'adresse email saisie n'est pas valide.";
@@ -95,7 +95,7 @@ myFormValidation.addEventListener('submit', function(e) {
       e.preventDefault();
     }
 
-    if (validBirthdateRegex.test(birthdate.value) === false) {
+    if (validBirthdateRegex.test(birthdate) === false) {
       myError = document.querySelector(".errorBirthdate");
       myBorder = document.querySelector(".text-control4");
       myError.innerHTML = "La date de naissance saisie n'est pas valide."
@@ -105,7 +105,7 @@ myFormValidation.addEventListener('submit', function(e) {
       e.preventDefault();
     }
     
-    if (validQuantityRegex.test(quantity.value) === false) {
+    if (validQuantityRegex.test(quantity) === false) {
       myError = document.querySelector(".errorQuantity");
       myBorder = document.querySelector(".text-control5");
       myError.innerHTML = "Ce champs n'est pas valide."
