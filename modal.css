@@ -202,7 +202,7 @@ input {
 
 
 
-.text-control {
+.text-control1, .text-control2, .text-control3, .text-control4, .text-control5 {
   margin: 0;
   padding: 8px;
   width: 100%;
