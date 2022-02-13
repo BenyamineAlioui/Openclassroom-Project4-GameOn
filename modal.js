@@ -71,7 +71,7 @@ myFormValidation.addEventListener('submit', function(e) {
 
     e.preventDefault();
 
-    if (firstName.value.length < 2) {
+    if (firstName.value.length <2) {
       let myError = document.querySelector(".errorFirstName");
       let myBorder = document.querySelector(".text-control1");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
@@ -84,7 +84,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = "green";
     } 
     
-    if (lastName.value.length < 2) {
+    if (lastName.value.length <2) {
       let myError = document.querySelector(".errorLastName");
       let myBorder = document.querySelector(".text-control2");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
@@ -140,7 +140,7 @@ myFormValidation.addEventListener('submit', function(e) {
 
     // au moins un element checked == true
     let isChecked = false;
-    for(let i = 0; i < city.length; i++){
+    for(let i = 0; i <city.length; i++){
       let element = city[i];
       if(element.checked) {
         isChecked = true;
