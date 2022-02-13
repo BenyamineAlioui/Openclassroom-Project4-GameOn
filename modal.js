@@ -75,12 +75,8 @@ myFormValidation.addEventListener('submit', function(e) {
       let myError = document.querySelector(".errorFirstName");
       let myBorder = document.querySelector(".text-control1");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
-      myError.style.color = "red";
-      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
-      firstNameFormValid = false;
-      
-      
+      firstNameFormValid = false; 
     } else{
       let myError = document.querySelector(".errorFirstName");
       let myBorder = document.querySelector(".text-control1");
@@ -92,11 +88,8 @@ myFormValidation.addEventListener('submit', function(e) {
       let myError = document.querySelector(".errorLastName");
       let myBorder = document.querySelector(".text-control2");
       myError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-      myError.style.color = "red";
-      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       lastNameFormValid = false;
-      
     } else{
       let myError = document.querySelector(".errorLastName");
       let myBorder = document.querySelector(".text-control2");
@@ -108,8 +101,6 @@ myFormValidation.addEventListener('submit', function(e) {
       myError = document.querySelector(".errorEmail");
       myBorder = document.querySelector(".text-control3");
       myError.innerHTML = "L'adresse email saisie n'est pas valide.";
-      myError.style.color = "red";
-      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       emailFormValid = false;
       
@@ -124,11 +115,8 @@ myFormValidation.addEventListener('submit', function(e) {
       myError = document.querySelector(".errorBirthdate");
       myBorder = document.querySelector(".text-control4");
       myError.innerHTML = "La date de naissance saisie n'est pas valide."
-      myError.style.color = "red";
-      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
-      birthdateformValid = false;
-      
+      birthdateFormValid = false;
     } else{
       let myError = document.querySelector(".errorBirthdate");
       let myBorder = document.querySelector(".text-control4");
@@ -140,8 +128,6 @@ myFormValidation.addEventListener('submit', function(e) {
       myError = document.querySelector(".errorQuantity");
       myBorder = document.querySelector(".text-control5");
       myError.innerHTML = "Ce champs n'est pas valide."
-      myError.style.color = "red";
-      myError.style.fontSize = "13px";
       myBorder.style.borderColor = "red";
       quantityFormValid = false;
       
@@ -169,16 +155,12 @@ myFormValidation.addEventListener('submit', function(e) {
     } else{
       myError = document.querySelector(".errorCity");
       myError.innerHTML = "Ce champs est requis";
-      myError.style.color = "red";
-      myError.style.fontSize = "13px";
       cityFormValid = false;
     } 
     
     if (userConditions.checked == false) {
       myError = document.querySelector(".errorUC");
       myError.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
-      myError.style.color = "red";
-      myError.style.fontSize = "13px";
       userConditionsFormValid = false;
     } else{
       let myError = document.querySelector(".errorUC");
