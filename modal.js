@@ -60,7 +60,7 @@ myFormValidation.addEventListener('submit', function(e) {
   let validBirthdateRegex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
   let validQuantityRegex = /^[0-9]+$/;
   
-  // 
+  // Variables permettant de dire que le champs et valide ou pas afin de faire la transaction avec la seconde modal
   let firstNameFormValid = true;
   let lastNameFormValid = true;
   let emailFormValid = true;
@@ -71,6 +71,7 @@ myFormValidation.addEventListener('submit', function(e) {
 
     e.preventDefault();
 
+    //Algorithme de validation du champs prenom
     if (firstName.value.length <2) {
       let myError = document.querySelector(".errorFirstName");
       let myBorder = document.querySelector(".text-control1");
@@ -84,6 +85,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = "green";
     } 
     
+    //Algorithme de validation du champs Nom
     if (lastName.value.length <2) {
       let myError = document.querySelector(".errorLastName");
       let myBorder = document.querySelector(".text-control2");
@@ -97,6 +99,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = "green";
     }
    
+    //Algorithme de validation du champs email
     if (validEmailRegex.test(email.value) == false) {
       myError = document.querySelector(".errorEmail");
       myBorder = document.querySelector(".text-control3");
@@ -111,6 +114,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = "green";
     }
     
+    //Algorithme de validation du champs date de naissance
     if (validBirthdateRegex.test(birthdate.value) == false) {
       myError = document.querySelector(".errorBirthdate");
       myBorder = document.querySelector(".text-control4");
@@ -124,6 +128,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = "green";
     }
     
+    //Algorithme de validation du champs tournois jouer
     if (validQuantityRegex.test(quantity.value) == false) {
       myError = document.querySelector(".errorQuantity");
       myBorder = document.querySelector(".text-control5");
@@ -138,7 +143,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myBorder.style.borderColor = "green";
     }
 
-    // au moins un element checked == true
+    //Algorithme de validation du champs ville en deux etape, une boucle puis un if/else, au moins un element checked == true
     let isChecked = false;
     for(let i = 0; i <city.length; i++){
       let element = city[i];
@@ -158,6 +163,7 @@ myFormValidation.addEventListener('submit', function(e) {
       cityFormValid = false;
     } 
     
+    //Algorithme de validation du champs conditions d'utilisateur
     if (userConditions.checked == false) {
       myError = document.querySelector(".errorUC");
       myError.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
@@ -167,6 +173,7 @@ myFormValidation.addEventListener('submit', function(e) {
       myError.style.display = "none";
     }
 
+    //Algorithme d'affichage de la seconde modal sous condition que chaque champs est egal a true
     if (firstNameFormValid & lastNameFormValid & emailFormValid & birthdateFormValid & quantityFormValid & cityFormValid & userConditionsFormValid){
       console.log("182")
       modal1.style.display = "none";
@@ -175,24 +182,18 @@ myFormValidation.addEventListener('submit', function(e) {
 
 })
 
-
+// On récupère tout les elements du DOM nous concernant ici donc les deux modals et le btn submit
 const modal1 = document.querySelector(".content");
 const modal2 = document.querySelector(".content2");
 const btnSubmit = document.querySelector(".btn-submit")
 
-// On écoute l'évenement click avec la fonction submitValid
-//btnSubmit.addEventListener('click', submitValid);
-
-//On crée la fonction submitValid qui permet de d'afficher le message de bienvenue
-//function submitValid () {}
-
 // On récupère le btn close de la seconde modal
 const btnClose2 = document.querySelector(".close2"); 
 
-// On écoute l'évenement click avec la fonction closeModal
+// On écoute l'évenement click du bouton fermer de la seconde modal avec la fonction closeModal
 btnClose2.addEventListener('click', closeModal2);
 
-//On crée la fonction closeModal qui permet de fermer la modal
+//On crée la fonction closeModal2 qui permet de fermer la modal
 function closeModal2 () {
   modalbg.style.display = "none";
 }
